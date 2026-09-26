@@ -19,11 +19,13 @@ export default function Header() {
 
   const navClasses = ({ isActive }) =>
     `rounded-full px-4 py-2 text-sm font-medium transition ${
-      isActive ? 'bg-orange-500 text-white shadow-sm' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+      isActive
+        ? 'bg-orange-500 text-white shadow-sm'
+        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-white'
     }`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md dark:border-slate-700 dark:bg-slate-900/90">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-pink-500 text-white shadow-sm">
@@ -31,7 +33,7 @@ export default function Header() {
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Vetdiaries</p>
-            <h1 className="text-lg font-bold text-slate-900">{t('siteName')}</h1>
+            <h1 className="text-lg font-bold text-slate-900 dark:text-slate-100">{t('siteName')}</h1>
           </div>
         </Link>
 
@@ -47,7 +49,7 @@ export default function Header() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="rounded-full border border-slate-200 bg-slate-50 p-2.5 text-slate-700 transition hover:border-orange-200 hover:text-orange-500"
+            className="rounded-full border border-slate-200 bg-slate-50 p-2.5 text-slate-700 transition hover:border-orange-200 hover:text-orange-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <SunMedium size={18} /> : <Moon size={18} />}
@@ -57,7 +59,7 @@ export default function Header() {
             <select
               value={locale}
               onChange={(e) => setLocale(e.target.value)}
-              className="appearance-none rounded-full border border-slate-200 bg-slate-50 px-3 py-2 pr-9 text-sm text-slate-700 outline-none ring-0 transition focus:border-orange-300"
+              className="appearance-none rounded-full border border-slate-200 bg-slate-50 px-3 py-2 pr-9 text-sm text-slate-700 outline-none ring-0 transition focus:border-orange-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
               aria-label={t('common.language')}
             >
               {localeOptions.map((option) => (
@@ -71,7 +73,7 @@ export default function Header() {
 
           <Link
             to="/animals"
-            className="hidden rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-500 md:inline-flex"
+            className="hidden rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-500 md:inline-flex dark:bg-orange-500 dark:hover:bg-orange-400"
           >
             {t('common.adopt')}
           </Link>
@@ -79,7 +81,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileOpen((value) => !value)}
-            className="rounded-full border border-slate-200 p-2.5 text-slate-700 md:hidden"
+            className="rounded-full border border-slate-200 p-2.5 text-slate-700 md:hidden dark:border-slate-700 dark:text-slate-200"
             aria-label="Menu"
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
@@ -88,12 +90,12 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-slate-200 bg-white px-4 py-3 md:hidden">
+        <div className="border-t border-slate-200 bg-white px-4 py-3 md:hidden dark:border-slate-700 dark:bg-slate-900">
           <div className="mb-3">
             <select
               value={locale}
               onChange={(e) => setLocale(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 p-2.5 text-sm text-slate-700 outline-none"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 p-2.5 text-sm text-slate-700 outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
             >
               {localeOptions.map((option) => (
                 <option value={option.code} key={option.code}>
@@ -111,7 +113,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
                   `block rounded-xl px-3 py-2 text-sm font-medium ${
-                    isActive ? 'bg-orange-500 text-white' : 'bg-slate-100 text-slate-700'
+                    isActive ? 'bg-orange-500 text-white' : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200'
                   }`
                 }
               >

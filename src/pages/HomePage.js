@@ -25,31 +25,31 @@ export default function HomePage() {
 
   return (
     <div className={`space-y-12 ${isRTL ? 'rtl' : ''}`}>
-      <section className="overflow-hidden rounded-[32px] bg-gradient-to-br from-orange-50 via-white to-rose-50 p-6 shadow-sm ring-1 ring-slate-200 md:p-10">
+      <section className="overflow-hidden rounded-[32px] bg-gradient-to-br from-orange-50 via-white to-rose-50 p-6 shadow-sm ring-1 ring-slate-200 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 dark:ring-slate-700 md:p-10">
         <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white px-3 py-1.5 text-sm font-medium text-orange-600">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white px-3 py-1.5 text-sm font-medium text-orange-600 dark:border-orange-500/30 dark:bg-slate-800 dark:text-orange-300">
               <Sparkles size={16} />
               Adoption responsable en Tunisie
             </div>
-            <h2 className="max-w-xl text-4xl font-black tracking-tight text-slate-900 md:text-5xl">
+            <h2 className="max-w-xl text-4xl font-black tracking-tight text-slate-900 dark:text-slate-100 md:text-5xl">
               {t('home.heroTitle')}
             </h2>
-            <p className="mt-4 max-w-lg text-lg text-slate-600">{t('home.heroSubtitle')}</p>
+            <p className="mt-4 max-w-lg text-lg text-slate-600 dark:text-slate-300">{t('home.heroSubtitle')}</p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <input
                 value={quickSearch}
                 onChange={(e) => setQuickSearch(e.target.value)}
                 placeholder={t('animalsPage.searchPlaceholder')}
-                className="w-full rounded-full border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-0 transition focus:border-orange-300"
+                className="w-full rounded-full border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 transition placeholder:text-slate-400 focus:border-orange-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-400"
               />
-              <button type="button" onClick={handleSearch} className="rounded-full bg-slate-900 px-6 py-3 font-semibold text-white transition hover:bg-orange-500">
+              <button type="button" onClick={handleSearch} className="rounded-full bg-slate-900 px-6 py-3 font-semibold text-white transition hover:bg-orange-500 dark:bg-orange-500 dark:hover:bg-orange-400">
                 {t('common.search')}
               </button>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-600">
+            <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-300">
               <span className="inline-flex items-center gap-2"><CheckCircle2 className="text-emerald-500" size={16} /> 1 200+ animaux sauvés</span>
               <span className="inline-flex items-center gap-2"><MapPin className="text-orange-500" size={16} /> 20+ villes</span>
             </div>
@@ -58,15 +58,15 @@ export default function HomePage() {
           <div className="relative">
             <div className="absolute -left-8 top-4 h-24 w-24 rounded-full bg-orange-200/70 blur-3xl" />
             <div className="absolute -right-8 bottom-4 h-24 w-24 rounded-full bg-rose-200/70 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white p-3 shadow-xl">
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white p-3 shadow-xl dark:border-slate-700 dark:bg-slate-800">
               <img
                 src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80"
                 alt="Animal adoption"
                 className="h-[420px] w-full rounded-[24px] object-cover"
               />
-              <div className="absolute bottom-8 left-8 rounded-2xl bg-white/90 p-4 shadow-xl backdrop-blur-sm">
-                <p className="text-sm text-slate-500">Adoption ce mois</p>
-                <p className="mt-1 text-2xl font-bold text-slate-900">312</p>
+              <div className="absolute bottom-8 left-8 rounded-2xl bg-white/90 p-4 shadow-xl backdrop-blur-sm dark:bg-slate-900/90">
+                <p className="text-sm text-slate-500 dark:text-slate-300">Adoption ce mois</p>
+                <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-slate-100">312</p>
               </div>
             </div>
           </div>
