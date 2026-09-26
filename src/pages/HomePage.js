@@ -60,7 +60,7 @@ export default function HomePage() {
             <div className="absolute -right-8 bottom-4 h-24 w-24 rounded-full bg-rose-200/70 blur-3xl" />
             <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white p-3 shadow-xl dark:border-slate-700 dark:bg-slate-800">
               <img
-                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80"
+                src="https://supawork.ai/examples/gif-batch-page/animated-gif/gifs/demo1.gif"
                 alt="Animal adoption"
                 className="h-[420px] w-full rounded-[24px] object-cover"
               />
