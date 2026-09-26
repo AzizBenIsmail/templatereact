@@ -32,7 +32,7 @@ export default function Header() {
             <PawPrint size={22} />
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Vetdiaries</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Adoptini</p>
             <h1 className="text-lg font-bold text-slate-900 dark:text-slate-100">{t('siteName')}</h1>
           </div>
         </Link>

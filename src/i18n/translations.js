@@ -1,6 +1,6 @@
 export const translations = {
   fr: {
-    siteName: 'Vetdiaries',
+    siteName: 'Adoptini',
     nav: {
       home: 'Accueil',
       animals: 'Animaux',
@@ -130,7 +130,7 @@ export const translations = {
     },
   },
   en: {
-    siteName: 'Vetdiaries',
+    siteName: 'Adoptini',
     nav: {
       home: 'Home',
       animals: 'Animals',
@@ -260,7 +260,7 @@ export const translations = {
     },
   },
   ar: {
-    siteName: 'Vetdiaries',
+    siteName: 'Adoptini',
     nav: {
       home: 'الرئيسية',
       animals: 'الحيوانات',
