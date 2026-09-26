@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import DashboardLayout from './layouts/DashboardLayout';
+import HomePage from './pages/HomePage';
+import AnimalsPage from './pages/AnimalsPage';
+import AnimalDetailPage from './pages/AnimalDetailPage';
+import CategoriesPage from './pages/CategoriesPage';
+import CategoryAnimalsPage from './pages/CategoryAnimalsPage';
+import SheltersPage from './pages/SheltersPage';
+import AdoptionPage from './pages/AdoptionPage';
+import DashboardPage from './pages/DashboardPage';
+import NotFoundPage from './pages/NotFoundPage';
+import { LanguageProvider } from './i18n/LanguageContext';
+import { ThemeProvider } from './i18n/ThemeContext';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <LanguageProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/animals" element={<AnimalsPage />} />
+              <Route path="/animals/:id" element={<AnimalDetailPage />} />
+              <Route path="/categories" element={<CategoriesPage />} />
+              <Route path="/categories/:category" element={<CategoryAnimalsPage />} />
+              <Route path="/shelters" element={<SheltersPage />} />
+              <Route path="/adoption/:animalId" element={<AdoptionPage />} />
+              <Route path="/adoption" element={<AdoptionPage />} />
+            </Route>
+
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<DashboardPage />} />
+              <Route path="animals" element={<AnimalsPage />} />
+              <Route path="applications" element={<DashboardPage />} />
+              <Route path="users" element={<DashboardPage />} />
+              <Route path="settings" element={<DashboardPage />} />
+            </Route>
+
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </BrowserRouter>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
-
-export default App;
