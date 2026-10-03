@@ -9,6 +9,7 @@ import CategoryAnimalsPage from './pages/CategoryAnimalsPage';
 import SheltersPage from './pages/SheltersPage';
 import AdoptionPage from './pages/AdoptionPage';
 import DashboardPage from './pages/DashboardPage';
+import UserManagement from './components/UserManagement';
 import NotFoundPage from './pages/NotFoundPage';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { ThemeProvider } from './i18n/ThemeContext';
@@ -34,7 +35,7 @@ export default function App() {
               <Route index element={<DashboardPage />} />
               <Route path="animals" element={<AnimalsPage />} />
               <Route path="applications" element={<DashboardPage />} />
-              <Route path="users" element={<DashboardPage />} />
+              <Route path="users" element={<UserManagement />} />
               <Route path="settings" element={<DashboardPage />} />
             </Route>
 
