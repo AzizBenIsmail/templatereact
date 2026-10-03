@@ -50,9 +50,9 @@ export default function HomePage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-300">
-              <span className="inline-flex items-center gap-2"><CheckCircle2 className="text-emerald-500" size={16} /> 1 200+ animaux sauvés</span>
+              <span className="inline-flex items-center gap-2"><CheckCircle2 className="text-emerald-500" size={16} /> 3 200+ animaux sauvés</span>
               <span className="inline-flex items-center gap-2"><MapPin className="text-orange-500" size={16} /> 20+ villes</span>
-            </div>
+            </div> 
           </div>
 
           <div className="relative">
